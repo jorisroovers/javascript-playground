@@ -61,3 +61,7 @@ typings/
 webassembly/emsdk
 
 dist/
+
+# Ignore cypress screenshots
+cypress_experiments/cypress/screenshots/*
+cypress_experiments/cypress/videos/*

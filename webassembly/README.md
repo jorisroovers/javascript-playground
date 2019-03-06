@@ -29,6 +29,22 @@ emcc -v # show version
 ### Compiling to WASM
 
 ```bash
-emcc hello_world.c #generates a.out.js
-emcc hello_world.c -o hello.html # generates hello.js and hello.html
+emcc hello_world.c #generates a.out.js, a.out.wasm
+# Use -g to also compile to 'wast' which is the human-readable text version of wasm
+emcc -g hello_world.c
+
+# Run it:
+node a.out.js
+```
+
+a.out.wasm is the WebAssembly file containing the compiled code, and a.out.js is a JavaScript file containing the runtime support to load and execute it.
+
+You can also compile to HTML, which will also generate a small container webpage.
+```sh
+emcc hello_world.c -o hello.html # generates hello.js, hello.wasm, hello.html
+```
+
+To get hello.html working, you need to actually host the hello.html from a webserver since hello.html will try to load hello.wasm and hello.js dynamically which isn't allowed from the file:/// protocol for security
+```sh
+python -m SimpleHTTPServer 8080
 ```
