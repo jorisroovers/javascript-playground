@@ -19,4 +19,4 @@ node_modules/.bin/cypress run
 ```
 Click on a test to run it.
 
-Note this playground is a very minimal example, cypress also supports plugins, custom commands, etc - a lot of the default example/boilerplate code was removed from this directory.
+Note this playground is a very minimal example, cypress also supports plugins, custom commands, etc - a lot of the default example/boilerplate code was removed from this directory. 
